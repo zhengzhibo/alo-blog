@@ -9,8 +9,8 @@
         A blog with Nuxt.js
       </h2>
       <div class="links">
-        <nuxt-link to="/about"><a class="button--green">About</a></nuxt-link>
-        <a class="button--grey">GitHub</a>
+        <nuxt-link to="/about" tag="a" class="button--green">About</nuxt-link>
+        <a href="https://github.com" target="_blank" class="button--grey">GitHub</a>
       </div>
     </div>
   </section>

@@ -14,7 +14,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet',  href: 'https://cdn.jsdelivr.net/npm/element-ui@2.2.2/lib/theme-chalk/index.css' }
     ]
   },
 
@@ -27,7 +28,6 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    'element-ui/lib/theme-default/index.css'
   ],
 
   /*
