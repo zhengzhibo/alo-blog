@@ -1,12 +1,7 @@
-const pkg = require('../package')
-const resolve = require('path').resolve
-
-const nodeExternals = require('webpack-node-externals')
+const pkg = require('./package')
 
 module.exports = {
   mode: 'universal',
-
-  srcDir: resolve(__dirname, '..', 'resources'),
 
   /*
   ** Headers of the page
@@ -19,8 +14,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
 
@@ -33,14 +27,14 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    'vuetify/src/stylus/main.styl'
+    'element-ui/lib/theme-default/index.css'
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/vuetify'
+    '@/plugins/element-ui'
   ],
 
   /*
@@ -74,13 +68,6 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
-      }
-      if (ctx.isServer) {
-        config.externals = [
-          nodeExternals({
-            whitelist: [/^vuetify/]
-          })
-        ]
       }
     }
   }
