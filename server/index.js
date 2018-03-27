@@ -1,6 +1,4 @@
-
 const Koa = require('koa')
-const router = require('koa-router')();
 const { Nuxt, Builder } = require('nuxt')
 
 const app = new Koa()
