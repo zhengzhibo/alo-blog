@@ -1,13 +1,20 @@
 const Koa = require('koa')
+var Router = require('koa-router')
 const { Nuxt, Builder } = require('nuxt')
 
 const app = new Koa()
+const router = new Router();
+
 const host = process.env.HOST || '127.0.0.1'
 const port = process.env.PORT || 3000
 
 // Import and Set Nuxt.js options
 let config = require('../nuxt.config.js')
 config.dev = !(app.env === 'production')
+
+router.get('/api/', (ctx, next) => {
+  ctx.body = "api"
+});
 
 async function start() {
   // Instantiate nuxt.js
@@ -19,6 +26,7 @@ async function start() {
     await builder.build()
   }
 
+  app.use(router.routes())
   app.use(ctx => {
     ctx.status = 200 // koa defaults to 404 when it sees that status is unset
 
