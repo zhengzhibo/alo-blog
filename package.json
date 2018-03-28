@@ -17,6 +17,7 @@
     "element-ui": "^1.4.9",
     "koa": "^2.3.0",
     "koa-router": "^7.4.0",
+    "lodash": "^4.17.5",
     "nuxt": "^1.0.0"
   },
   "devDependencies": {
