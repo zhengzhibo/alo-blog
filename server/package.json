@@ -3,16 +3,22 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node index.js",
+    "dev": "cross-env NODE_ENV=development nodemon --inspect index.js"
+  },
   "dependencies": {
     "koa": "^2.5.0",
     "koa-bodyparser": "^4.2.0",
+    "koa-jwt": "^3.3.1",
     "koa-logger": "^3.2.0",
     "koa-router": "^7.4.0",
-    "koa-session": "^5.8.1",
+    "koa-unless": "^1.0.7",
     "lowdash": "^1.2.0",
     "lowdb": "^1.0.0"
   },
   "devDependencies": {
+    "cross-env": "^5.1.4",
     "nodemon": "^1.17.2"
   }
 }
