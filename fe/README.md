@@ -1,6 +1,6 @@
 # alo-blog
 
-> My laudable Nuxt.js project
+> My sweet Nuxt.js project
 
 ## Build Setup
 

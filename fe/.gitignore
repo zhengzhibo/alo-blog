@@ -9,9 +9,3 @@ npm-debug.log
 
 # Nuxt generate
 dist
-
-.vscode
-.history
-
-# yarn
-yarn-error.log
