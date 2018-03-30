@@ -5,6 +5,6 @@ module.exports = {
     },
 
     db: {
-        uri: '/db/db.json'
+        uri: './db/db.json'
     }
 }

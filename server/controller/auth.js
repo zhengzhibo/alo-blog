@@ -1,5 +1,8 @@
+const db = require('../db');
+const utils = require('utility');
+
 var login = async (ctx, next) => {
-    ctx.response.body = `<h1>Hello, Login!</h1>`;
+    ctx.response.body = "login api";
 };
 
 module.exports = {

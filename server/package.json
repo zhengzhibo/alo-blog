@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "cross-env NODE_ENV=production node index.js",
-    "dev": "cross-env NODE_ENV=development nodemon --inspect index.js"
+    "dev": "cross-env NODE_ENV=development nodemon --inspect index.js --ignore 'db/*.json'"
   },
   "dependencies": {
     "koa": "^2.5.0",
@@ -14,8 +14,10 @@
     "koa-logger": "^3.2.0",
     "koa-router": "^7.4.0",
     "koa-unless": "^1.0.7",
+    "lodash-id": "^0.14.0",
     "lowdash": "^1.2.0",
-    "lowdb": "^1.0.0"
+    "lowdb": "^1.0.0",
+    "utility": "^1.13.1"
   },
   "devDependencies": {
     "cross-env": "^5.1.4",

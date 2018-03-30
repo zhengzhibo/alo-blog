@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "title": "low!",
+      "id": "98e0a511-cd9c-4a52-857e-779d12e0940f"
+    },
+    {
+      "title": "low!",
+      "id": "396b2a4d-8398-4332-b633-b057cf6cc516"
+    }
+  ],
+  "user": {
+    "password": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+    "username": "admin"
+  }
+}
