@@ -1,12 +1,18 @@
 {
-  "posts": [
+  "post": [
     {
-      "title": "low!",
-      "id": "98e0a511-cd9c-4a52-857e-779d12e0940f"
+      "title": "test post 1",
+      "permaLink": "test_post_1",
+      "content": "test content 1",
+      "date": 1522425937022,
+      "id": "9afb4abb-4967-45ac-85dc-e7c9ebc53900"
     },
     {
-      "title": "low!",
-      "id": "396b2a4d-8398-4332-b633-b057cf6cc516"
+      "title": "test post 2",
+      "permaLink": "test_post_2",
+      "content": "test content 2",
+      "date": 1522425937022,
+      "id": "5b5b712e-14ff-46b8-be7f-e7e03e3e23e4"
     }
   ],
   "user": {
