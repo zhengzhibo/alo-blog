@@ -2,7 +2,7 @@ const db = require("../db");
 const utils = require("utility");
 
 var getAllPost = async (ctx, next) => {
-  ctx.response.body = db.get("post");
+  ctx.response.body = db.get("post").value();
 };
 
 var getPost = async (ctx, next) => {
