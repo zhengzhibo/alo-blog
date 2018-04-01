@@ -14,7 +14,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/element-ui@2.3.2/lib/theme-chalk/index.min.css'}
     ]
   },
 
@@ -27,15 +28,14 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    'element-ui/lib/theme-default/index.css'
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [
-    '@/plugins/element-ui'
-  ],
+  // plugins: [
+  //   '@/plugins/element-ui'
+  // ],
 
   /*
   ** Nuxt.js modules
@@ -49,7 +49,12 @@ module.exports = {
   ** Axios module configuration
   */
   axios: {
+    proxy: true
     // See https://github.com/nuxt-community/axios-module#options
+  },
+
+  proxy: {
+    '/api/': 'http://localhost:3030/'
   },
 
   /*
@@ -70,5 +75,7 @@ module.exports = {
         })
       }
     }
-  }
+  },
+
+  dev: true
 }

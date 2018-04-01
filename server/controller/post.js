@@ -7,7 +7,7 @@ var getAllPost = async (ctx, next) => {
 
 var getPost = async (ctx, next) => {
   let permaLink = ctx.params.permaLink;
-  ctx.response.body = db.get("post").find({ permaLink });
+  ctx.response.body = db.get("post").find({ permaLink }).value();
 };
 
 var addPost = async (ctx, next) => {
