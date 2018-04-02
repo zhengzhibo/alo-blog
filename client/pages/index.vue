@@ -1,16 +1,8 @@
 <template>
   <section class="container">
     <div>
-      <logo/>
-      <h1 class="title">
-        alo-blog
-      </h1>
-      <h2 class="subtitle">
-        My sweet Nuxt.js project
-      </h2>
-
       <ul>
-        <nuxt-link tag="li" v-for="p in post" :key="p.id" :to="'/post/'+p.permaLink">
+        <nuxt-link tag="li" v-for="p in post" :key="p.id" :to="'/'+p.permaLink">
           {{p.title}}
         </nuxt-link>
       </ul>
@@ -19,29 +11,18 @@
 </template>
 
 <script>
-import Logo from "~/components/Logo.vue";
-
 export default {
   async asyncData({ app }) {
-    let res = await app.$axios.get('/api/post');
-    return {post: res.data}; 
+    let res = await app.$axios.get("/api/post");
+    return { post: res.data };
   },
-  components: {
-    Logo
-  },
-  methods: {
-  }
+  components: {},
+  methods: {}
 };
 </script>
 
 <style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+
 .title {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */

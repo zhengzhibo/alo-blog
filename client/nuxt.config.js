@@ -15,7 +15,6 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/element-ui@2.3.2/lib/theme-chalk/index.min.css'}
     ]
   },
 
@@ -61,6 +60,8 @@ module.exports = {
   ** Build configuration
   */
   build: {
+
+    // publicPath: "https://static.lonelyrail.com",
     /*
     ** You can extend webpack config here
     */
