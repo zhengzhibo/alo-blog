@@ -41,6 +41,7 @@ module.exports = {
   "GET /post": getAllPost,
   "GET /post/:permaLink": getPost,
 
+  "GET /addpost": addPost,
   "POST /admin/post": addPost,
   "PUT /admin/post/:permaLink": modifyPost,
   "DELETE /admin/post/:permaLink": deletePost

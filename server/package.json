@@ -5,8 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "cross-env NODE_ENV=production node index.js",
-    "dev":
-      "cross-env NODE_ENV=development nodemon --inspect index.js --ignore 'db/*.json'"
+    "dev": "cross-env NODE_ENV=development nodemon --inspect index.js --ignore 'db/*.json'"
   },
   "dependencies": {
     "jsonwebtoken": "^8.2.0",

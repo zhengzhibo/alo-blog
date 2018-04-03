@@ -1,22 +1,24 @@
 <template>
   <section class="container">
     <div>
-      <ul>
-        <nuxt-link tag="li" v-for="p in post" :key="p.id" :to="'/'+p.permaLink">
-          {{p.title}}
+        <nuxt-link tag="div" v-for="p in post" :key="p.id" :to="'/'+p.permaLink">
+          <post :post="p"/>
         </nuxt-link>
-      </ul>
     </div>
   </section>
 </template>
 
 <script>
+import Post from "~/components/Post.vue"
 export default {
+  
   async asyncData({ app }) {
     let res = await app.$axios.get("/api/post");
     return { post: res.data };
   },
-  components: {},
+  components: {
+    Post
+  },
   methods: {}
 };
 </script>
