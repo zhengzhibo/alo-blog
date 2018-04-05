@@ -62,7 +62,7 @@ module.exports = {
   */
   build: {
 
-    // publicPath: "https://static.lonelyrail.com",
+    publicPath: "https://static.lonelyrail.com/_nuxt",
     /*
     ** You can extend webpack config here
     */
