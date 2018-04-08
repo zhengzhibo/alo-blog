@@ -17,6 +17,7 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: '//cdn.jsdelivr.net/npm/bulma@0.6.0/css/bulma.min.css' },
     ]
   },
 
@@ -63,7 +64,7 @@ module.exports = {
   */
   build: {
 
-    // publicPath: "https://static.lonelyrail.com",
+    //publicPath: "https://static.lonelyrail.com/_nuxt",
     /*
     ** You can extend webpack config here
     */
