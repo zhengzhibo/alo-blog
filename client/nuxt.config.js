@@ -31,7 +31,7 @@ module.exports = {
   */
   css: [
     'normalize.css',
-    '@/assets/css/app.css'
+    '@/assets/css/global.css'
   ],
 
   /*

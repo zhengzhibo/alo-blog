@@ -1,0 +1,23 @@
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  line-height: 1.6em;
+  font-family: Georgia, serif;
+  font-size: 1rem;
+}
+
+*,:after,:before {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit
+}
+
+.title,h1,h2,h3,h4,h5,h6 {
+  font-weight: 700;
+  color: #263238;
+}
+
+a {
+  -webkit-transition: color .2s ease-in-out,border .2s ease-in-out;
+  transition: color .2s ease-in-out,border .2s ease-in-out;
+  text-decoration: none
+}
