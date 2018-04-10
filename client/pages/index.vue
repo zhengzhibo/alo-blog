@@ -11,7 +11,6 @@ import Post from "~/components/Post.vue";
 export default {
   async asyncData({ app }) {
     let res = await app.$axios.get("/api/post");
-    debugger;
     return { post: res.data };
   },
   components: {
