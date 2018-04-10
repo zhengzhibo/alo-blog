@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
+    "analyze": "nuxt build -a",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
@@ -15,6 +16,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.0.0",
     "element-ui": "^2.0.0",
+    "normalize.css": "^8.0.0",
     "nuxt": "^1.0.0"
   },
   "devDependencies": {
