@@ -1,9 +1,16 @@
 <template>
   <footer>
-    <div class="foot">
-      <a>###</a>
-      <a>##2</a>
-      <a>##3</a>
+    <div class="footer">
+      <div class="copyright">
+        <p>© 2017-2018 Lonely Rail</p>
+      </div>
     </div>
   </footer>
 </template>
+
+
+<style scoped>
+footer {
+  margin-top: 20px;
+}
+</style>

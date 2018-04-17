@@ -1,8 +1,9 @@
 <template>
   <section class="section">
-    <nuxt-link tag="div" v-for="p in post" :key="p.id" :to="'/'+p.permaLink">
+    <div v-for="p in post" :key="p.id">
       <post :post="p" />
-    </nuxt-link>
+    </div>
+    <span>{{post.length}} Posts</span>
   </section>
 </template>
 

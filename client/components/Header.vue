@@ -6,7 +6,7 @@
       <nuxt-link to="/posts" class="navbar-item">POSTS</nuxt-link>
       <a href="https://github.com/zhengzhibo" target="_blank" class="navbar-item">GITHUB</a>
     </nav>
-    <h1>Blog</h1>
+    <h1>Lonely Rail</h1>
   </header>
 </template>
 <script>
@@ -14,6 +14,9 @@ export default {};
 </script>
 
 <style scoped>
+h1 {
+  margin: 20px 0 40px 0;
+}
 .navbar-item {
   font-size: 1em;
   text-transform: uppercase;
