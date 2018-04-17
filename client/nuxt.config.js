@@ -7,7 +7,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    title: "LonelyRail",
     meta: [
       { charset: 'utf-8' },
       { name: 'renderer', content: 'webkit' },
@@ -16,7 +16,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      //{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       //{ rel: 'stylesheet', href: '//cdn.jsdelivr.net/npm/bulma@0.6.0/css/bulma.min.css' },
     ]
   },
