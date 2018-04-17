@@ -7,7 +7,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: "LonelyRail",
+    title: "Lonely Rail",
     meta: [
       { charset: 'utf-8' },
       { name: 'renderer', content: 'webkit' },

@@ -18,6 +18,11 @@ export default {
     let res = await app.$axios.get(`/api/post/${app.params.permaLink}`);
     return { post: res.data };
   },
+  head() {
+    return {
+      title: this.post.title
+    };
+  },
   computed: {
     postDate: function() {
       return new Date(this.post.date);
@@ -40,6 +45,6 @@ export default {
 }
 
 .post-info span {
-  color: #ccc
+  color: #ccc;
 }
 </style>
