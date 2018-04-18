@@ -44,12 +44,21 @@ export default {
       return { post: {} };
     }
   },
+  head() {
+    return {
+      title: "manage"
+    };
+  },
   methods: {
-    saveOrUpdatePost: (params) => {
-      alert(this.$route.params.permaLink)
+    async saveOrUpdatePost() {
+      if (this.post.id) {
+        let res = await this.$axios.put(`/api/admin/post/${this.post.id}`);
+      } else {
+        let res = await this.$axios.post(`/api/admin/post/`);
+      }
+      console.log(res);
     }
   }
-
 };
 </script>
 

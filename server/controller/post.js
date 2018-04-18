@@ -19,20 +19,20 @@ var addPost = async (ctx, next) => {
 };
 
 var modifyPost = async (ctx, next) => {
-  let permaLink = ctx.params.permaLink;
+  let id = ctx.params.id;
   db
     .get("post")
-    .find({ permaLink })
+    .find({ id })
     .assign(ctx.request.body)
     .write();
   ctx.response.body = { success: true };
 };
 
 var deletePost = async (ctx, next) => {
-  let permaLink = ctx.params.permaLink;
+  let id = ctx.params.id;
   db
     .get("post")
-    .remove({ permaLink })
+    .remove({ id })
     .write();
   ctx.response.body = { success: true };
 };
@@ -41,8 +41,7 @@ module.exports = {
   "GET /post": getAllPost,
   "GET /post/:permaLink": getPost,
 
-  "GET /addpost": addPost,
   "POST /admin/post": addPost,
-  "PUT /admin/post/:permaLink": modifyPost,
-  "DELETE /admin/post/:permaLink": deletePost
+  "PUT /admin/post/:id": modifyPost,
+  "DELETE /admin/post/:id": deletePost
 };
