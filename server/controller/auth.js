@@ -16,18 +16,17 @@ var login = async (ctx, next) => {
 };
 
 var logout = async (ctx, next) => {
+    var scuuess = false;
+    if (ctx.header.authorization) {
+        scuuess = jwtUtils.removeToken(ctx.header.authorization);
+    }
 
-    var user = db.get('user').value();
-
-    if(ctx.request.body.username === user.username && utils.sha256(ctx.request.body.password) === user.password) {
-        ctx.body =  {
-            token: jwtUtils.signToken(user.username, ctx.ip)
-        }
-    } else {
-        ctx.throw(401, 'Authentication Error');
+    ctx.body =  {
+        success: scuuess
     }
 };
 
 module.exports = {
-    'POST /login': login
+    'POST /login': login,
+    'POST /logout': logout
 };

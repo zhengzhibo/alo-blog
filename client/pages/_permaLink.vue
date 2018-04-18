@@ -14,8 +14,13 @@
 </template>
 <script>
 export default {
-  async asyncData(app) {
-    let res = await app.$axios.get(`/api/post/${app.params.permaLink}`);
+  async asyncData({ app, error, params }) {
+    let res = await app.$axios.get(`/api/post/${params.permaLink}`);
+
+    if (!res.data) {
+      error({ statusCode: 404, message: "This page could not be found" });
+    }
+
     return { post: res.data };
   },
   head() {
