@@ -2,10 +2,10 @@
   <section class="container">
     <div>
       <h1 class="title">
-        Post
+        Tags
       </h1>
       <h2>
-        Just a Post Page!
+        Just a Tags Page!
       </h2>
     </div>
   </section>
