@@ -65,7 +65,6 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    analyze: true,
     publicPath: "https://static.lonelyrail.com/_nuxt/",
     /*
     ** You can extend webpack config here
