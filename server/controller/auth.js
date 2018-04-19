@@ -28,5 +28,5 @@ var logout = async (ctx, next) => {
 
 module.exports = {
     'POST /login': login,
-    'POST /logout': logout
+    'GET /logout': logout
 };
