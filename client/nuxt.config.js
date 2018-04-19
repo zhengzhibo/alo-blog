@@ -8,7 +8,6 @@ module.exports = {
   */
   head: {
     title: "Lonely Rail",
-    publicPath: 'https://static.lonelyrail.com/_nuxt/',
     meta: [
       { charset: 'utf-8' },
       { name: 'renderer', content: 'webkit' },
@@ -67,7 +66,7 @@ module.exports = {
   */
   build: {
     analyze: true,
-    //publicPath: "https://static.lonelyrail.com/_nuxt",
+    publicPath: "https://static.lonelyrail.com/_nuxt",
     /*
     ** You can extend webpack config here
     */
