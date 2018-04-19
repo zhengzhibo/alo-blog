@@ -1298,13 +1298,9 @@ lodash.once@^4.0.0:
   version "4.1.1"
   resolved "http://registry.npm.taobao.org/lodash.once/download/lodash.once-4.1.1.tgz#0dd3971213c7c56df880977d504c88fb471a97ac"
 
-lodash@4:
+lodash@4, lodash@^4.17.5:
   version "4.17.5"
   resolved "http://registry.npm.taobao.org/lodash/download/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
-
-lowdash@^1.2.0:
-  version "1.2.0"
-  resolved "http://registry.npm.taobao.org/lowdash/download/lowdash-1.2.0.tgz#d807b966da490ce449324a066b61dd2ff31089fa"
 
 lowdb@^1.0.0:
   version "1.0.0"
