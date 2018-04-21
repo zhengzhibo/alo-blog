@@ -17,7 +17,7 @@ module.exports = {
     ],
     link: [
       //{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      //{ rel: 'stylesheet', href: '//cdn.jsdelivr.net/npm/bulma@0.6.0/css/bulma.min.css' },
+      { rel: 'stylesheet', href: '//cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css' },
     ]
   },
 
@@ -30,7 +30,6 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    'normalize.css',
     '@/assets/css/global.css'
   ],
 
