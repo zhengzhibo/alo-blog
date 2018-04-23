@@ -39,8 +39,8 @@ export default {
   middleware: 'auth',
   async asyncData(app) {
     if (app.params.permaLink) {
-      let res = await app.$axios.get(`/api/post/${app.params.permaLink}`);
-      return { post: res.data };
+      let { data } = await app.$axios.get(`/api/post/${app.params.permaLink}`);
+      return { post: data };
     } else {
       return { post: {} };
     }
@@ -52,8 +52,9 @@ export default {
   },
   methods: {
     async saveOrUpdatePost() {
+      this.$axios.defaults.headers.common['Authorization'] = "Bearer " + this.$store.state.token;
       if (this.post.id) {
-        let res = await this.$axios.put(`/api/admin/post/${this.post.id}`);
+        let res = await this.$axios.put(`/api/admin/post/${this.post.id}`, this.post);
       } else {
         let res = await this.$axios.post(`/api/admin/post/`);
       }
