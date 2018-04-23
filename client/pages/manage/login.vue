@@ -1,9 +1,10 @@
 <template>
   <section class="container">
     <div>
-        <input type="text" v-model="form.username" class="username">
-        <input type="password" v-model="form.password" class="password">
-        <button @click="login">login</button>
+      <p class="error" v-if="formError">{{ formError }}</p>
+      <input type="text" v-model="username" class="username">
+      <input type="password" v-model="password" class="password">
+      <button @click="login">login</button>
     </div>
   </section>
 </template>
@@ -17,16 +18,26 @@ export default {
   },
   data() {
     return {
-      form : {
         username: "",
-        password: ""
-      }
-    }
+        password: "",
+        formError: ""
+    };
   },
   methods: {
     async login() {
-      if (this.form.username && this.form.password) {
-        let res = await this.$axios.post(`/api/login`, this.form);
+      try {
+        await this.$store.dispatch("login", {
+          username: this.username,
+          password: this.password
+        });
+        this.username = "";
+        this.username = "";
+        this.formError = null;
+
+        const post = "test_psot_1"
+        this.$router.push({ path: `/manage/post/${post}` })
+      } catch (e) {
+        this.formError = e.message;
       }
     }
   }

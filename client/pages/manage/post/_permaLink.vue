@@ -36,6 +36,7 @@
 
 <script>
 export default {
+  middleware: 'auth',
   async asyncData(app) {
     if (app.params.permaLink) {
       let res = await app.$axios.get(`/api/post/${app.params.permaLink}`);

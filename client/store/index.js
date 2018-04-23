@@ -1,37 +1,62 @@
-import axios from 'axios'
+import axios from "axios";
+import jwtDecode from "jwt-decode";
 
 export const state = () => ({
-  authUser: null
-})
+  authUser: null,
+  token: null
+});
+
+let instance = axios.create({
+  timeout: 1000
+});
 
 export const mutations = {
-  SET_USER: function (state, user) {
-    state.authUser = user
+  SET_USER: function(state, auth) {
+    state.authUser = auth.user;
+  },
+
+  SET_TOKEN: function(state, token) {
+    state.token = token;
+    instance.defaults.headers = { Authorization: "Bearer " + token };
   }
-}
+};
 
 export const actions = {
   // nuxtServerInit is called by Nuxt.js before server-rendering every page
   nuxtServerInit({ commit }, { req }) {
-    if (req.session && req.session.authUser) {
-      commit('SET_USER', req.session.authUser)
-    }
+    try {
+      const jwtCookie = req.headers.cookie
+        .split(";")
+        .find(c => c.trim().startsWith("token="));
+      if (jwtCookie) {
+        let token = jwtCookie.split("=")[1];
+        let payload = jwtDecode(token);
+        let date = Date.now() / 1000;
+        if (payload.exp > date) {
+          commit("SET_USER", payload.user);
+          commit("SET_TOKEN", token);
+          instance.defaults.baseURL = backendURL;
+        }
+      }
+    } catch (error) {}
   },
   async login({ commit }, { username, password }) {
     try {
-      const { data } = await axios.post('/api/login', { username, password })
-      commit('SET_USER', data)
+      const { data } = await axios.post("/api/login", { username, password });
+      let payload = jwtDecode(data.token);
+      commit("SET_USER", payload.user);
+      commit("SET_TOKEN", data.token);
     } catch (error) {
       if (error.response && error.response.status === 401) {
-        throw new Error('Bad credentials')
+        throw new Error("Bad credentials");
       }
-      throw error
+      throw error;
     }
   },
 
   async logout({ commit }) {
-    await axios.post('/api/logout')
-    commit('SET_USER', null)
+    await axios.post("/api/logout");
+    commit("SET_USER", null);
+    commit("SET_TOKEN", null);
   }
-
-}
+};
