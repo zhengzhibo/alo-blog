@@ -18,9 +18,9 @@ export default {
   },
   data() {
     return {
-        username: "",
-        password: "",
-        formError: ""
+      username: "",
+      password: "",
+      formError: ""
     };
   },
   methods: {
@@ -34,8 +34,8 @@ export default {
         this.username = "";
         this.formError = null;
 
-        const post = "test_psot_1"
-        this.$router.push({ path: `/manage/post/${post}` })
+        const post = "test_post_1";
+        this.$router.push({ path: `/manage/post/${post}` });
       } catch (e) {
         this.formError = e.message;
       }
