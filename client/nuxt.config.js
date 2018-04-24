@@ -18,6 +18,7 @@ module.exports = {
     link: [
       //{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: '//cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css' },
+      { rel: 'stylesheet', href: '//use.fontawesome.com/releases/v5.0.10/css/all.css', integrity: "sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg", crossorigin: "anonymous" },
     ]
   },
 
@@ -69,7 +70,6 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      debugger
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
