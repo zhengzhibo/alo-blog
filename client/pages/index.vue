@@ -3,7 +3,7 @@
     <div v-for="p in post" :key="p.id">
       <post :post="p" />
     </div>
-    <span>{{post.length}} Posts</span>
+    <p>{{post.length}} Posts</p>
   </section>
 </template>
 

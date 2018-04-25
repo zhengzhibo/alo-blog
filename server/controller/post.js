@@ -2,12 +2,16 @@ const db = require("../db");
 const utils = require("utility");
 
 var getAllPost = async (ctx, next) => {
-  ctx.response.body = db.get("post").value();
+  ctx.response.body = db.get("post").filter(o => {
+    return !o.deleted
+  }).value();
 };
 
 var getPost = async (ctx, next) => {
   let permaLink = ctx.params.permaLink;
-  ctx.response.body = db.get("post").find({ permaLink }).value();
+  ctx.response.body = db.get("post").filter(o => {
+    return !o.deleted
+  }).find({ permaLink }).value();
 };
 
 var addPost = async (ctx, next) => {
@@ -32,7 +36,11 @@ var deletePost = async (ctx, next) => {
   let id = ctx.params.id;
   db
     .get("post")
-    .remove({ id })
+    //.remove({ id })
+    .find({ id })
+    .assign({
+      deleted: true
+    })
     .write();
   ctx.response.body = { success: true };
 };
