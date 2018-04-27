@@ -37,12 +37,21 @@
 <script>
 export default {
   middleware: 'auth',
+  data() {
+    return {
+      post: {
+        title:"",
+        permaLink:"",
+        content:""
+      }
+    }
+  },
   async asyncData(app) {
     if (app.params.permaLink) {
       let { data } = await app.$axios.get(`/api/post/${app.params.permaLink}`);
-      return { post: data };
-    } else {
-      return { post: {} };
+      if (data) {
+        return { post: data };
+      }
     }
   },
   head() {
@@ -56,9 +65,8 @@ export default {
       if (this.post.id) {
         let res = await this.$axios.put(`/api/admin/post/${this.post.id}`, this.post);
       } else {
-        let res = await this.$axios.post(`/api/admin/post/`);
+        let res = await this.$axios.post(`/api/admin/post/`, this.post);
       }
-      console.log(res);
     }
   }
 };
