@@ -24,10 +24,8 @@
 
       <div class="field is-grouped">
         <div class="control">
-          <button class="button is-link" @click="saveOrUpdatePost">Save</button>
-        </div>
-        <div class="control">
-          <button class="button is-text">Cancel</button>
+          <button class="button" @click="saveOrUpdatePost">Save</button>
+          <button class="button" @click="backToList">Cancel</button>
         </div>
       </div>
     </div>
@@ -36,15 +34,15 @@
 
 <script>
 export default {
-  middleware: 'auth',
+  middleware: "auth",
   data() {
     return {
       post: {
-        title:"",
-        permaLink:"",
-        content:""
+        title: "",
+        permaLink: "",
+        content: ""
       }
-    }
+    };
   },
   async asyncData(app) {
     if (app.params.permaLink) {
@@ -61,12 +59,23 @@ export default {
   },
   methods: {
     async saveOrUpdatePost() {
-      this.$axios.defaults.headers.common['Authorization'] = "Bearer " + this.$store.state.token;
+      this.$axios.defaults.headers.common["Authorization"] =
+        "Bearer " + this.$store.state.token;
+      let res;
       if (this.post.id) {
-        let res = await this.$axios.put(`/api/admin/post/${this.post.id}`, this.post);
+        res = await this.$axios.put(
+          `/api/admin/post/${this.post.id}`,
+          this.post
+        );
+        alert("modify success");
       } else {
-        let res = await this.$axios.post(`/api/admin/post/`, this.post);
+        res = await this.$axios.post(`/api/admin/post/`, this.post);
+        alert("add success");
+        this.$router.push("/manage/post");
       }
+    },
+    backToList({ app }) {
+      this.$router.push("/manage/post");
     }
   }
 };
