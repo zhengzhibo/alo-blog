@@ -33,9 +33,7 @@ export default {
         this.username = "";
         this.username = "";
         this.formError = null;
-        //test
-        const post = "test_post_1";
-        this.$router.push({ path: `/manage/post/${post}` });
+        this.$router.push({ path: `/manage/post/` });
       } catch (e) {
         this.formError = e.message;
       }

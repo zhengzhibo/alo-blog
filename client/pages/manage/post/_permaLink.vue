@@ -18,7 +18,7 @@
       <div class="field">
         <label class="label">Content</label>
         <div class="control">
-          <textarea v-model="post.content" class="textarea"></textarea>
+          <mavon-editor v-model="post.content" ref="md" />
         </div>
       </div>
 
@@ -33,6 +33,9 @@
 </template>
 
 <script>
+var mavonEditor = require("mavon-editor");
+import "mavon-editor/dist/css/index.css";
+
 export default {
   middleware: "auth",
   data() {
@@ -43,6 +46,9 @@ export default {
         content: ""
       }
     };
+  },
+  components: {
+    "mavon-editor": mavonEditor.mavonEditor
   },
   async asyncData(app) {
     if (app.params.permaLink) {
