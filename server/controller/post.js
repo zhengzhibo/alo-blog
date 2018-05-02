@@ -15,9 +15,13 @@ var getPost = async (ctx, next) => {
 };
 
 var addPost = async (ctx, next) => {
+  let post = ctx.request.body;
+  if (!post.date) {
+    post.date = new Date().getTime();
+  }
   db
     .get("post")
-    .insert(ctx.request.body)
+    .insert(post)
     .write();
   ctx.response.body = { success: true };
 };

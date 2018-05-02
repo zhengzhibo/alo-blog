@@ -17,22 +17,20 @@ export default {
     return { post: res.data };
   },
   methods: {
-    editPost: permaLink => {
-      console.log(this.$router)
+    editPost: function(permaLink) {
       this.$router.push({path: `/manage/post/${permaLink}`});
     },
 
-    deletePost: async id => {
+    deletePost: async function(id) {
       this.$axios.defaults.headers.common['Authorization'] = "Bearer " + this.$store.state.token;
-      this.$asios
-
       try {
         let {data} = await this.$axios.delete(`/api/admin/post/${id}`);
         if (data.success) {
-          alert(data.success)
+          let res = await this.$axios.get("/api/post");
+          this.$set(this, 'post', res.data);
         }
       } catch (error) {
-        
+        console.error(error)
       }
     }
   }
