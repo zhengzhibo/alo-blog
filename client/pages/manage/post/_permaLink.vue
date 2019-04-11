@@ -18,7 +18,10 @@
       <div class="field">
         <label class="label">Content</label>
         <div class="control">
-          <mavon-editor v-model="post.content" ref="md" />
+          <no-ssr>
+            <mavon-editor @change="handleChange" v-model="post.content" ref="md" />
+          </no-ssr>
+
         </div>
       </div>
 
@@ -33,8 +36,6 @@
 </template>
 
 <script>
-var mavonEditor = require("mavon-editor");
-import "mavon-editor/dist/css/index.css";
 
 export default {
   middleware: "auth",
@@ -43,12 +44,10 @@ export default {
       post: {
         title: "",
         permaLink: "",
-        content: ""
+        content: "",
+        html: "",
       }
     };
-  },
-  components: {
-    "mavon-editor": mavonEditor.mavonEditor
   },
   async asyncData(app) {
     if (app.params.permaLink) {
@@ -82,6 +81,9 @@ export default {
     },
     backToList({ app }) {
       this.$router.push("/manage/post");
+    },
+    handleChange(md, html) {
+      this.post.html = html;
     }
   }
 };

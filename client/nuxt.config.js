@@ -41,6 +41,10 @@ module.exports = {
   //   '@/plugins/element-ui'
   // ],
 
+  plugins: [
+      { src: '@/plugins/vue-mavon-editor', srr: false }
+  ],
+
   /*
   ** Nuxt.js modules
   */
