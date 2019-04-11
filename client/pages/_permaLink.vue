@@ -6,8 +6,7 @@
         <h1>{{post.title}}</h1>
       </div>
 
-      <article>
-        {{post.content}}
+      <article class="markdown-body" v-html="post.html">
       </article>
     </div>
   </section>
@@ -45,6 +44,8 @@ export default {
 };
 </script>
 <style scoped>
+@import "mavon-editor/src/lib/css/markdown.css";
+
 .post-info h1 {
   margin: 0.3em 0 1em 0;
 }
